@@ -15,15 +15,12 @@ See http://vagrantup.com/ for Vagrant installation instructions.
 
 Make sure to install the latest version of VirtualBox and VirtualBox Addons before proceeding.
 
-If you want a stable Vagrant set up, clone or keep a copy - I am going to
-rework as I see fit for a while yet.
-
 To use, check out Magento 2 and this Vagrant files in sibling directories.
 For example:
 
-    cd myprojects
+    cd myproject
     git clone https://github.com/magento/magento2.git
-    git clone https://github.com/alankent/vagrant-magento2-apache-base.git
+    git clone https://github.com/Quinten/vagrant-magento2-apache-base.git
 
 The Vagrantfile mounts ../magento2 under /var/www/magento2.
 
@@ -58,10 +55,8 @@ Feedback welcome!
 
 
 See also
+* Original repo: https://github.com/alankent/vagrant-magento2-apache-base
 * Blog post https://alankent.wordpress.com/2014/12/21/reducing-magento-2-install-pain-through-virtualization/
-* Alernative: Nicer than mine, but with all files inside VM https://github.com/ryanstreet/magento2-vagrant
-* Another one: https://github.com/rgranadino/mage2_vagrant, using NFS for better hosting performance
+* Alernative: with all files inside VM https://github.com/ryanstreet/magento2-vagrant
+* Another one: https://github.com/rgranadino/mage2_vagrant, also using NFS for better hosting performance
 
-(Future ideas include parameterizing so you can pick the web server (Apache or
-Nginx), pick the database server (MySQL, MariaDB, Percona etc), add Redis,
-Varnish etc auxiliary servers. One day!)
