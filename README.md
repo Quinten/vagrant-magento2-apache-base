@@ -1,6 +1,8 @@
 vagrant-magento2-apache-base
 ============================
 
+
+
 Quick and dirty Vagrant image for building Magento 2. The idea is you run
 MySQL and Apache in a Vagrant 'box' (VM), but do all your development
 using your normal tools on your desktop.
@@ -50,7 +52,7 @@ again. A deploy.sh shell script is provided to do this.
 
     vagrant ssh -- sh /vagrant/scripts/deploy.sh
 
-Finally, accesses your site on your laptop/desktop using http://localhost:8080/
+Finally, accesses your site on your laptop/desktop using http://192.168.254.91/
 
 Feedback welcome!
 
