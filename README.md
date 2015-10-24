@@ -32,9 +32,11 @@ When the Vagrant box has been built, you can ssh into it.
     vagrant ssh
 
 Last thing we need to do is run a script from inside our vagrant box to deploy magento. This script wraps 3 things:
+
 * run composer install
 * install the sample data
 * run the magento installation
+
 
     sh /vagrant/scripts/deploy.sh
 
