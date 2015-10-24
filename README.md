@@ -1,15 +1,9 @@
 vagrant-magento2-apache-base
 ============================
 
-
-
 Quick and dirty Vagrant image for building Magento 2. The idea is you run
 MySQL and Apache in a Vagrant 'box' (VM), but do all your development
 using your normal tools on your desktop.
-
-It purposely only uses shell scripts to configure things so readers can poke
-around and not have to learn yet another technology like Chef, Puppet, or
-Ansible. Serious developers might like to look at other Vagrant images.
 
 See http://vagrantup.com/ for Vagrant installation instructions.
 
@@ -29,34 +23,29 @@ You can edit using your local tools in your laptop/desktop etc. Go into the
 
 To start up the Vagrant image, go into 'vagrant-magento2-apache-base' and
 run 'vagrant up'. It contains its own MySQL database and Apache web server.
-You need to log in and run the deploy script from inside for now. This runs
-the Magento setup script (wipes database, wipes caches, creates config files
-etc). This may change in the future
 
     cd vagrant-magento2-apache-base
     vagrant up
 
-First time you check out the tree, you need to run composer to download 3rd
-party libraries. You can do this on your laptop/desktop or inside Vagrant.
-First time you do an install, later you would do a comoser update after each
-git pull to make sure the libraries are kept up to date. This is slow, so I
-did not include in the deploy.sh script.
+When the Vagrant box has been built, you can ssh into it.
 
-    vagrant ssh -- "cd /var/www/magento2 && composer install"
+    vagrant ssh
 
-You also need to create the local database, or occasionally wipe it to start
-again. A deploy.sh shell script is provided to do this.
+Last thing we need to do is run a script from inside our vagrant box to deploy magento. This script wraps 3 things:
+* run composer install
+* install the sample data
+* run the magento installation
 
-    vagrant ssh -- sh /vagrant/scripts/deploy.sh
+    sh /vagrant/scripts/deploy.sh
 
-Finally, accesses your site on your laptop/desktop using http://192.168.254.91/
-
-Feedback welcome!
-
+Finally, access your site on your laptop/desktop using http://192.168.254.91/
 
 See also
 * Original repo: https://github.com/alankent/vagrant-magento2-apache-base
 * Blog post https://alankent.wordpress.com/2014/12/21/reducing-magento-2-install-pain-through-virtualization/
 * Alernative: with all files inside VM https://github.com/ryanstreet/magento2-vagrant
 * Another one: https://github.com/rgranadino/mage2_vagrant, also using NFS for better hosting performance
+
+
+
 
