@@ -13,8 +13,8 @@ composer install
 
 # install sample data
 # TODO make it optional with a flag
-git clone https://github.com/magento/magento2-sample-data.git
-php -f magento2-sample-data/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2/"
+# git clone https://github.com/magento/magento2-sample-data.git
+# php -f magento2-sample-data/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2/"
 
 # Set up, rebuilding database from scratch.
 php bin/magento setup:install \
